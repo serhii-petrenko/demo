@@ -13,4 +13,9 @@ public class Controller {
     public ResponseEntity<String> helloWorld() {
         return ResponseEntity.ok("Hello, World!");
     }
+
+    @GetMapping("/bye")
+    public ResponseEntity<String> byeWorld() {
+        return ResponseEntity.ok("Bye, World!");
+    }
 }

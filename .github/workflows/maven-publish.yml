@@ -48,16 +48,16 @@ name: Publish package to GitHub Packages
 on:
   push:
     branches: [main]
-    jobs:
-      publish:
+jobs:
+  publish:
 
-        runs-on: ubuntu-latest
-        permissions:
-          contents: read
-          packages: write
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
           
-        steps:
-        - name: Publish package
-          run: mvn --batch-mode deploy -Dmaven.test.skip
-          env:
-            GITHUB_TOKEN: ${{ secrets.TOKEN }}
+    steps:
+    - name: Publish package
+      run: mvn --batch-mode deploy -Dmaven.test.skip
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
